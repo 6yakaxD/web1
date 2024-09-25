@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <title>Лабораторная 1 по вебу</title>
+</head>
+<body>
+    
+    <div class="headder">
+        <h1>Таджеддинов Рамиль Эмильевич</h1>
+        <p>Группа P3108, Вариант 244</p>
+    </div>
+
+    <div class="main">
+        <div class="graph-wrapper">
+            <img src="graph.png" height="400" style="user-select: none; pointer-events: none;">
+        </div>
+
+        <div class="input-wrapper">
+
+            <form action="/to_helios/static" method="POST" class="data-form">
+
+                <table>
+                    <tr>
+                        <td><p>Введите X:</p></td>
+                        <td id="x">
+                            <label><input type="radio" name="x" value="-5">-5</label>
+                            <label><input type="radio" name="x" value="-4">-4</label>
+                            <label><input type="radio" name="x" value="-3">-3</label>
+                            <label><input type="radio" name="x" value="-2">-2</label>
+                            <label><input type="radio" name="x" value="-1">-1</label>
+                            <label><input type="radio" name="x" value="0">0</label>
+                            <label><input type="radio" name="x" value="1">1</label>
+                            <label><input type="radio" name="x" value="2">2</label>
+                            <label><input type="radio" name="x" value="3">3</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>Введите Y:</p></td>
+                        <td><label for="y"></label><input type="text" id="y" required></td>
+                    </tr>
+                    <tr>
+                        <td><p>Введите R:</p></td>
+                        <td><label for="r"></label><input type="text" id="r" required></td>
+                    </tr>
+
+                    <td colspan="2">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <button id="resultButton" type="submit">Отправить</button>
+                        </div>
+                    </td>
+                    
+                </table>
+                
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="results-section">
+        <table id="result-table">
+            <tr>
+                <th>x</th>
+                <th>y</th>
+                <th>r</th>
+                <th>time</th>
+                <th>execution time</th>
+                <th>result</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>10:00</td>
+                <td>0.5s</td>
+                <td>Success</td>
+              </tr>
+
+              
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
