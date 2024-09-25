@@ -13,7 +13,7 @@
     
     <div class="headder">
         <h1>Таджеддинов Рамиль Эмильевич</h1>
-        <p>Группа P3108, Вариант 244</p>
+        <p>Группа P3208, Вариант 244</p>
     </div>
 
     <div class="main">
@@ -23,7 +23,7 @@
 
         <div class="input-wrapper">
 
-            <form action="/to_helios/static" method="POST" class="data-form">
+            <form action="/to_helios/static" method="POST" class="data-form" onsubmit="">
 
                 <table>
                     <tr>
@@ -51,7 +51,7 @@
 
                     <td colspan="2">
                         <div style="display: flex; justify-content: center; align-items: center;">
-                            <button id="resultButton" type="submit">Отправить</button>
+                            <button id="resultButton" type="submit" onclick="event.preventDefault(); sendData()">Отправить</button>
                         </div>
                     </td>
                     
@@ -74,14 +74,7 @@
                 <th>result</th>
             </tr>
 
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>10:00</td>
-                <td>0.5s</td>
-                <td>Success</td>
-              </tr>
+
 
               
         </table>
