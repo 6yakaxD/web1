@@ -3,7 +3,7 @@
 function sendData() {
     const x = document.querySelector('input[name="x"]:checked')?.value;
     const y = document.getElementById('y').value;
-    const r = document.querySelector('input[name="r"]:checked')?.value;
+    const r = document.getElementById('r').value;
 
     const data = JSON.stringify({
         x: parseFloat(x),
