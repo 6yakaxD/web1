@@ -23,7 +23,7 @@
 
         <div class="input-wrapper">
 
-            <form action="/to_helios/static" method="POST" class="data-form" onsubmit="">
+            <form method="POST" class="data-form" onsubmit="return validateForm()">
 
                 <table>
                     <tr>
@@ -64,19 +64,20 @@
     </div>
 
     <div class="results-section">
-        <table id="result-table">
+        <table id="result">
+            <thead>
             <tr>
-                <th>x</th>
-                <th>y</th>
-                <th>r</th>
-                <th>time</th>
-                <th>execution time</th>
-                <th>result</th>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Результат</th>
+                <th>Время</th>
+                <th>Время выполнения</th>
             </tr>
-
-
-
-              
+            </thead>
+            <tbody id="results">
+                <!-- Здесь будут появляться динамически подгружаемые данные -->
+            </tbody>
         </table>
     </div>
 
