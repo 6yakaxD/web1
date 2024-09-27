@@ -55,7 +55,9 @@ public class Main {
     }
 
     private static boolean validate(double x, double y, double r) {
-        return x >= -5.0 && x <= 3.0 && y >= -3.0 && y <= 3.0 && r >= 2.0 && r <= 5.0;
+        return x >= -5.0 && x <= 3.0 &&
+                y >= -3.0 && y <= 3.0 &&
+                r >= 2.0 && r <= 5.0;
     }
 
     private static void sendJson(String json) {
