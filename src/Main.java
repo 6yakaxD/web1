@@ -23,7 +23,7 @@ public class Main {
                 double y = jsonRequest.getDouble("y");
                 double r = jsonRequest.getDouble("r");
 
-                boolean isInside = checkHit(x, y, r) && valid(x, y, r);
+                boolean isInside = checkHit(x, y, r) && validate(x, y, r);
                 long endTime = System.nanoTime();
 
                 String jsonResponse = new JSONObject()
@@ -42,20 +42,20 @@ public class Main {
     }
 
     public static boolean checkHit(double x, double y, double r) {
-        if (x >= 0 && y >= 0 && y <= r && x <= r && y <= -2 * x + r) {
-            return true;
+        if (x >= 0 && y >= 0 && y <= r && x <= r/2) {
+            return true; // rectangle
         }
         if (x <= 0 && y <= 0 && (x * x + y * y <= (r / 2) * (r / 2))) {
-            return true;
+            return true; // circle
         }
-        if (x <= 0 && y >= 0 && x >= -r / 2 && y <= r) {
-            return true;
+        if (x >= 0 && y <= 0 && y >= 0.5 * x - r / 2) {
+            return true; // triangle
         }
         return false;
     }
 
-    private static boolean valid(double x, double y, double r) {
-        return y >= -3.0 && y <= 3.0 && x >= -5.0 && x <= 3.0 && r >= 1.0 && r <= 5.0;
+    private static boolean validate(double x, double y, double r) {
+        return x >= -5.0 && x <= 3.0 && y >= -3.0 && y <= 3.0 && r >= 2.0 && r <= 5.0;
     }
 
     private static void sendJson(String json) {
