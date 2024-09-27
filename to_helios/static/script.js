@@ -10,10 +10,10 @@ function validateForm() {
         return false;
     }
 
-    if (!y || isNaN(y)) {
+    if (!r || isNaN(r)) {
         alert("Поле R должно быть числом!");
         return false;
-    } else if (y < 2 || y > 5) {
+    } else if (r < 2 || r > 5) {
         alert("Значение R должно лежать в диапазоне от -3 до 3")
         return false;
     }
@@ -27,6 +27,7 @@ function validateForm() {
 
 
 function sendData() {
+    validateForm();
     const x = document.querySelector('input[name="x"]:checked')?.value;
     const y = document.getElementById('y').value;
     const r = document.getElementById('r').value;
@@ -37,13 +38,14 @@ function sendData() {
         r: parseFloat(r)
     });
 
-    fetch('/fcgi-bin/app.jar', {
+    fetch('/fcgi-bin/server.jar', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: data
     })
         .then(response => response.json())
         .then(json => {
+            console.log(json)
             const table = document.querySelector("#result tbody");
             let newRow = table.insertRow(-1);
             newRow.innerHTML =

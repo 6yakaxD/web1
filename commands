@@ -1,7 +1,9 @@
+apache - 47075
+fcgi - 47085
 
-scp -r -P 2222 .\httpd-root\ .\start_it.sh .\static\ s409659@se.ifmo.ru:./web/lab1/
+scp -r -P 2222 .\httpd-root\ .\start_it.sh .\static\ s409659@se.ifmo.ru:./
 
-ssh -p 2222 s409659@helios.cs.ifmo.ru -L 39564:localhost:39564
+ssh -p 2222 s409659@helios.cs.ifmo.ru -L 47075:localhost:47075
 
 
 
