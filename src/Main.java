@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.json.JSONObject;
 
 public class Main {
@@ -26,12 +28,16 @@ public class Main {
                 boolean isInside = checkHit(x, y, r) && validate(x, y, r);
                 long endTime = System.nanoTime();
 
+                LocalDateTime now = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                String formattedDateTime = now.format(formatter);
+
                 String jsonResponse = new JSONObject()
                         .put("result", isInside)
                         .put("x", x)
                         .put("y", y)
                         .put("r", r)
-                        .put("currentTime", LocalDateTime.now().toString())
+                        .put("currentTime", formattedDateTime)
                         .put("executionTime", (endTime - startTime) + "ns").toString();
                 sendJson(jsonResponse);
             } catch (Exception e) {
