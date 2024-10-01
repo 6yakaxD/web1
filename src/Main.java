@@ -25,21 +25,21 @@ public class Main {
                 double y = jsonRequest.getDouble("y");
                 double r = jsonRequest.getDouble("r");
 
-                boolean isInside = checkHit(x, y, r) && validate(x, y, r);
+                boolean isInside = check_in_figure(x, y, r) && validate(x, y, r);
                 long endTime = System.nanoTime();
 
                 LocalDateTime now = LocalDateTime.now();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
                 String formattedDateTime = now.format(formatter);
 
-                String jsonResponse = new JSONObject()
+                String Response = new JSONObject()
                         .put("result", isInside)
                         .put("x", x)
                         .put("y", y)
                         .put("r", r)
                         .put("currentTime", formattedDateTime)
                         .put("executionTime", (endTime - startTime) + "ns").toString();
-                sendJson(jsonResponse);
+                sendJson(Response);
             } catch (Exception e) {
                 sendJson(new JSONObject().put("error", e.getMessage()).toString());
             }
@@ -47,7 +47,7 @@ public class Main {
 
     }
 
-    public static boolean checkHit(double x, double y, double r) {
+    public static boolean check_in_figure(double x, double y, double r) {
         if (x >= 0 && y >= 0 && y <= r && x <= r/2) {
             return true; // rectangle
         }
