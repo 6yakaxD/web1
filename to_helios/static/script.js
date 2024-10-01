@@ -31,6 +31,8 @@ function validateForm() {
 
 
 function sendData() {
+    event.preventDefault();
+
     const x = document.querySelector('input[name="x"]:checked')?.value;
     const y = document.getElementById('y').value;
     const r = document.getElementById('r').value;
