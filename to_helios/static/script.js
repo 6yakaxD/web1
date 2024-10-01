@@ -66,7 +66,7 @@ function sendData() {
                 results.push(json);
                 localStorage.setItem('results', JSON.stringify(results));
 
-            }).catch(error => console.error('Error:', error));
+            }).catch(error => console.error(error));
     }
 }
 
